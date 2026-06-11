@@ -1,0 +1,5 @@
+for_deaf.env
+for_deaf-prd(참고용).md
+.claude/
+backend/server.log
+backend/server.err

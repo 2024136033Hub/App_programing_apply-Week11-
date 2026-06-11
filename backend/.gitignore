@@ -1,0 +1,7 @@
+.env
+for_deaf.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
