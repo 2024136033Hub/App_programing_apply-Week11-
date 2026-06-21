@@ -117,7 +117,7 @@ project_3-1-2/
 
 | 결정 | 선택 | 근거 |
 |------|------|------|
-| 모바일 프레임워크 | React Native | 웹 코드 재사용, JS 단일 스택 → [ADR-0001](../planning/decisions/ADR-0001-mobile-framework.md) |
-| 상태 관리 | useState + Context API | 외부 패키지 불필요, 규모에 적합 → [ADR-0002](../planning/decisions/ADR-0002-state-management.md) |
-| 백엔드 | FastAPI | Gemini Python SDK 최적, async 지원 → [ADR-0003](../planning/decisions/ADR-0003-backend-choice.md) |
+| 모바일 프레임워크 | React Native | 웹 코드 재사용, JS 단일 스택 → [ADR-0001](../.planning/decisions/ADR-0001-mobile-framework.md) |
+| 상태 관리 | useState + Context API | 외부 패키지 불필요, 규모에 적합 → [ADR-0002](../.planning/decisions/ADR-0002-state-management.md) |
+| 백엔드 | FastAPI | Gemini Python SDK 최적, async 지원 → [ADR-0003](../.planning/decisions/ADR-0003-backend-choice.md) |
 | 수어 인식 | Gemini Vision API | KSL 학습 데이터 부족으로 LSTM → Gemini Vision 전환 |

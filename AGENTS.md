@@ -34,7 +34,7 @@
 
 ### 설계·구현 단계
 - `docs/architecture.md` — 시스템 아키텍처 + Mermaid 다이어그램
-- `planning/decisions/ADR-000*.md` — 기술 선택 의사결정 기록 3개
+- `.planning/decisions/ADR-000*.md` — 기술 선택 의사결정 기록 3개
 - 백엔드: FastAPI 라우터, SQLAlchemy 모델, JWT 인증, Gemini API 키 순환 로직
 - 프론트엔드: React Context API 인증, 번역 기록 CRUD, 반응형 UI
 

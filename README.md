@@ -68,9 +68,9 @@ npm run dev
 
 | ADR | 결정 |
 |-----|------|
-| [ADR-0001](planning/decisions/ADR-0001-mobile-framework.md) | 모바일 프레임워크: React Native |
-| [ADR-0002](planning/decisions/ADR-0002-state-management.md) | 상태 관리: useState + Context API |
-| [ADR-0003](planning/decisions/ADR-0003-backend-choice.md) | 백엔드: FastAPI |
+| [ADR-0001](.planning/decisions/ADR-0001-mobile-framework.md) | 모바일 프레임워크: React Native |
+| [ADR-0002](.planning/decisions/ADR-0002-state-management.md) | 상태 관리: useState + Context API |
+| [ADR-0003](.planning/decisions/ADR-0003-backend-choice.md) | 백엔드: FastAPI |
 
 ---
 

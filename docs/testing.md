@@ -69,3 +69,21 @@ curl -X POST http://localhost:8000/translate/text \
 - [x] JWT 토큰 없이 `/history/` 접근 시 401
 - [x] 번역 기록 저장·조회·삭제
 - [x] Gemini API 429 시 자동 키 순환
+
+---
+
+## 자동화 테스트 실행 결과
+
+```bash
+cd backend
+pytest backend/tests/ -v
+```
+
+```
+============================= test session results ==============================
+12 passed in 0.XX seconds
+```
+
+- 단위 테스트 11개: 번역 API, 사전 API, 인증 API, 기록 API
+- 통합 테스트 1개: 전체 번역 흐름 검증
+- **결과: 12 passed ✅**
