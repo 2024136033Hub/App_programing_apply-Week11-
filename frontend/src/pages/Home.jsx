@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="max-w-2xl mx-auto text-center space-y-10 py-12">
       <div>
-        <h1 className="text-5xl font-bold text-brand mb-4">수다</h1>
+        <h1 className="text-5xl font-bold text-brand mb-4">수다<span className="text-3xl font-normal text-ink-muted ml-2">(手多)</span></h1>
         <p className="text-xl text-ink leading-relaxed">
           청각장애인을 위한 한국어 수어(KSL) 실시간 번역 플랫폼
         </p>
