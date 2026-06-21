@@ -1,11 +1,13 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import SubtitleDisplay from '../components/SubtitleDisplay'
 import LoadingSpinner from '../components/LoadingSpinner'
-import { recognizeFrame, translateWords } from '../services/api'
+import { recognizeFrame, translateWords, addHistory } from '../services/api'
+import { useAuth } from '../contexts/AuthContext'
 
 const CAPTURE_INTERVAL_MS = 3000
 
 export default function WebcamPage() {
+  const { user, getToken } = useAuth()
   const videoRef = useRef(null)
   const canvasRef = useRef(null)
   const streamRef = useRef(null)
@@ -41,9 +43,10 @@ export default function WebcamPage() {
       if (data.word) {
         setLastWord(data.word)
         setRecognizedWords((prev) => [...prev, data.word])
+        setError('')
       }
-    } catch {
-      // 프레임 인식 실패 시 조용히 무시
+    } catch (err) {
+      setError(`프레임 인식 오류: ${err.message}`)
     } finally {
       isRecognizingRef.current = false
       setIsRecognizing(false)
@@ -101,6 +104,12 @@ export default function WebcamPage() {
     try {
       const data = await translateWords(recognizedWords)
       setTranslationResult(data.result)
+      if (user) {
+        addHistory(
+          { translation_type: 'webcam', input_words: JSON.stringify(recognizedWords), result: data.result },
+          getToken()
+        ).catch(() => {})
+      }
     } catch {
       setError('번역 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.')
     } finally {

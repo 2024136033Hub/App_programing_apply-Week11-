@@ -2,7 +2,7 @@ import httpx
 
 WIKI_SUMMARY_API = "https://ko.wikipedia.org/api/rest_v1/page/summary"
 WIKI_OPENSEARCH  = "https://ko.wikipedia.org/w/api.php"
-HEADERS = {"User-Agent": "AccessAI/1.0 (https://github.com/accessai; cs026_c@ainuri.kr)"}
+HEADERS = {"User-Agent": "SudaApp/1.0 (https://github.com/2024136033Hub; cs026_c@ainuri.kr)"}
 
 async def get_noun_image(word: str) -> str | None:
     async with httpx.AsyncClient() as client:

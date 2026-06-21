@@ -1,8 +1,9 @@
 import os
 import httpx
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(Path(__file__).parents[2] / 'for_deaf.env')
 
 SIGN_TOTAL_KEY = os.getenv("SIGN_TOTAL_KEY")
 UNIFIED_URL    = "https://api.kcisa.kr/API_CNV_054/request"

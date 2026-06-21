@@ -18,8 +18,11 @@ async def search_sign(word: str):
 
 @router.get("/image")
 async def get_image(word: str):
-    image_url = await get_noun_image(word)
-    return {"image_url": image_url}
+    try:
+        image_url = await get_noun_image(word)
+        return {"image_url": image_url}
+    except Exception:
+        return {"image_url": None}
 
 @router.get("/debug")
 async def debug_raw(word: str):
@@ -52,14 +55,18 @@ async def media_proxy(url: str):
 
     content_type = "video/mp4" if url.lower().endswith(".mp4") else "image/jpeg"
 
+    client = httpx.AsyncClient(timeout=30, follow_redirects=True)
+
     async def stream():
-        async with httpx.AsyncClient() as client:
+        try:
             async with client.stream(
-                "GET", url, timeout=30, follow_redirects=True,
+                "GET", url,
                 headers={"Referer": "https://sldict.korean.go.kr/"}
             ) as r:
-                async for chunk in r.aiter_bytes(chunk_size=8192):
+                async for chunk in r.aiter_bytes(chunk_size=65536):
                     yield chunk
+        finally:
+            await client.aclose()
 
     return StreamingResponse(
         stream(),
