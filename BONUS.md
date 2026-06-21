@@ -1,7 +1,7 @@
 # BONUS.md — 가산점 신청
 
 **프로젝트:** 수다 — 청각장애인을 위한 한국어 수어(KSL) 번역 플랫폼
-**신청 항목:** A (+1), B (+2)
+**신청 항목:** A (+1), B (+2), C (+1)
 
 ---
 
@@ -31,7 +31,7 @@
 
 ### 증빙
 - `AGENTS.md` — AI Agent 활용 전체 기록
-- `planning/` 디렉토리 — AI와 함께 작성한 기획 산출물
+- `.planning/` 디렉토리 — AI와 함께 작성한 기획 산출물
 - `backend/tests/test_api.py` — AI가 생성한 테스트 코드
 
 ---
@@ -61,7 +61,7 @@ AUTHORING 파일 한 장에 모든 맥락을 담아두면, 새 세션을 시작�
 
 ### 실제 사용된 흔적
 - `AGENTS.md` — AUTHORING에서 정의한 워크플로우가 실제로 적용된 결과물
-- `planning/decisions/ADR-*.md` — AUTHORING의 "결정은 ADR로 기록" 규칙 적용
+- `.planning/decisions/ADR-*.md` — AUTHORING의 "결정은 ADR로 기록" 규칙 적용
 - `docs/` 전체 문서 — AUTHORING의 문서화 컨벤션 적용
 
 ### 증빙

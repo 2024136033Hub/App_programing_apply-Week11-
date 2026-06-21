@@ -48,7 +48,7 @@
 - API 통신: `frontend/src/services/api.js` — 모든 fetch 여기서 관리
 
 ### 문서
-- 의사결정: `planning/decisions/ADR-NNNN-*.md` (ADR 형식)
+- 의사결정: `.planning/decisions/ADR-NNNN-*.md` (ADR 형식)
 - 기술 문서: `docs/` (setup, deploy, testing, architecture)
 - AI 활용 기록: `AGENTS.md`
 
