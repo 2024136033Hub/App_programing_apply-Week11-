@@ -21,7 +21,21 @@
 
 ---
 
-## 기술 선택 (ADR)
+## 기술 선택 (ADR) — 핵심 요약
+
+**ADR-0001 — 모바일 프레임워크: React Native**
+> 웹(React)이랑 코드를 재사용할 수 있고, JavaScript 하나로 앱까지 만들 수 있어서 선택했습니다. Flutter는 Dart 언어를 따로 배워야 해서 미채택했습니다.
+
+**ADR-0002 — 상태 관리: useState + Context API**
+> 전역으로 공유할 데이터가 로그인 정보 하나뿐이라 Redux는 복잡도 대비 이득이 없었습니다. React 내장 기능으로 충분했습니다.
+
+**ADR-0003 — 백엔드: FastAPI**
+> Gemini Python SDK와 바로 연동되고, async로 여러 API를 동시에 호출할 수 있어서 선택했습니다. Django는 너무 무겁고, Flask는 비동기 지원이 약해서 미채택했습니다.
+
+**Q. PR(Pull Request)은 있나요?**
+> 개인 프로젝트라 별도 PR 없이 project1 브랜치에 직접 커밋했습니다. 팀 프로젝트였다면 feature 브랜치 → PR → 코드 리뷰 → 머지 방식을 적용했을 것입니다.
+
+---
 
 **Q. 왜 FastAPI를 선택했나요? Django나 Flask는요?**
 > Gemini Python SDK와 완전 호환되고, async/await 비동기 처리로 외부 API 3개를 동시 호출해 응답 속도를 높일 수 있습니다. Django는 풀스택 구조가 무거워 API 서버에 과도하고, Flask는 비동기를 기본 지원하지 않아 미채택했습니다. (ADR-0003 참고)
